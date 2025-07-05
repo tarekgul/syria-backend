@@ -13,7 +13,12 @@ import planRoutes from './routes/planRoutes.js';
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://syria-frontend.vercel.app', // رابط موقعك على Vercel
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // اختبار الاتصال
